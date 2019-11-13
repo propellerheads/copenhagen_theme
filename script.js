@@ -211,7 +211,7 @@ $(document).ready(function() {
         closeHeaderMenus();
     });
   
-    closeHeaderMenus();
+		closeHeaderMenus();
 
     window.Propellerhead = window.Propellerhead || {};
     window.Propellerhead.closeHeaderMenus = closeHeaderMenus;
@@ -234,7 +234,7 @@ function showLoginButtons() {
 
 $(document).ready(function() {
   if (getCookie('ph_zd_loggedin')) {
-    showMenu();
+  	showMenu();
   } else {
     showLoginButtons();
   }
@@ -253,7 +253,7 @@ $(document).ready(function() {
     }
   }
   
-  maybeShowForumButton();
+	maybeShowForumButton();
   hideContactSupportButtononReasonCompact();
   
 });
@@ -261,7 +261,7 @@ $(document).ready(function() {
 $(document).ready(function() {
     'use strict';
   
-    $('#cookie-message').hide();
+  	$('#cookie-message').hide();
 
     // Header search dropdown: medium screens only
     // Handled with bootstrap collapse
@@ -288,5 +288,5 @@ $(document).ready(function() {
       r=o.createElement('script');r.async=1;
       r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
       a.appendChild(r);
-    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+  	})(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
 });
