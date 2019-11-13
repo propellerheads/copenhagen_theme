@@ -1,22 +1,98 @@
-<footer class="footer">
-  <div class="footer-inner">
-    {{#link 'help_center'}}{{help_center.name}}{{/link}}
+</main>
 
-    <div class="footer-language-selector">
-      {{#if alternative_locales}}
-        <div class="dropdown language-selector">
-          <button class="dropdown-toggle" aria-haspopup="true">
-            {{current_locale.name}}
-          </button>
-          <span class="dropdown-menu dropdown-menu-end" role="menu">
-            {{#each alternative_locales}}
-              <a href="{{url}}" dir="{{direction}}" rel="nofollow" role="menuitem">
-                {{name}}
-              </a>
-            {{/each}}
-          </span>
+<div class="mt-auto">
+    <footer id="footer" class="bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <svg class="footer-logotype"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reason-studios-logotype"></use></svg>
+                </div>
+                <div class="col-sm-4 col-md-3 col-lg-2">
+                    <h6 class="footer-toggle collapsed text-uppercase m-0 pt-5 pb-10"
+                        data-toggle="collapse" data-target="#footer-list-company" aria-expanded="false" aria-controls="footer-list-company"
+                    >Company<i class="fa fa-plus"></i>
+                    </h6>
+                    <div id="footer-list-company" class="collapse" data-parent="#footer">
+                        <ul class="list-unstyled">
+                            <li><a href="https://www.reasonstudios.com/about">About us</a></li>
+                            <li><a href="https://www.reasonstudios.com/contact">Contact us</a></li>
+                            <li><a href="https://www.reasonstudios.com/press">Press</a></li>
+                            <li><a href="https://www.reasonstudios.com/developers">Developers</a></li>
+                            <li><a href="https://www.reasonstudios.com/company/employment">Careers</a></li>
+                            <li><a href="https://www.reasonstudios.com/agreements">Terms of service</a></li>
+                            <li><a href="https://www.reasonstudios.com/reason/buy/find-a-dealer" data-pjax="disable">Find a dealer</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-3 col-lg-2">
+                    <h6 class="footer-toggle collapsed text-uppercase m-0 pt-5 pb-10"
+                        data-toggle="collapse" data-target="#footer-list-products" aria-expanded="false" aria-controls="footer-list-products"
+                    >Products<i class="fa fa-plus"></i>
+                    </h6>
+                    <div id="footer-list-products" class="collapse" data-parent="#footer">
+                        <ul class="list-unstyled">
+                            <li><a href="https://www.reasonstudios.com/reason">Reason</a></li>
+                            <li><a href="https://www.reasonstudios.com/recycle">ReCycle</a></li>
+                            <li><a href="https://www.reasonstudios.com/download/refills">Sound libraries</a></li>
+                            <li><a href="https://www.reasonstudios.com/europa">Europa</a></li>
+                            <li><a href="https://www.reasonstudios.com/reason-compact">Reason Compact</a></li>
+                            <li><a href="https://www.reasonstudios.com/take">Take</a></li>
+                            <li><a href="https://www.reasonstudios.com/figure">Figure</a></li>
+                            <li><a href="https://www.reasonstudios.com/thor">Thor</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-3 col-lg-2">
+                    <h6 class="footer-toggle collapsed text-uppercase m-0 pt-5 pb-10"
+                        data-toggle="collapse" data-target="#footer-list-support" aria-expanded="false" aria-controls="footer-list-support"
+                    >Support<i class="fa fa-plus"></i>
+                    </h6>
+                    <div id="footer-list-support" class="collapse" data-parent="#footer">
+                        <ul class="list-unstyled">
+                            <li><a href="https://help.reasonstudios.com">Products</a></li>
+                            <li><a href="https://help.reasonstudios.com/hc/categories/360000265873-Support-News">News</a></li>
+                            <li><a href="https://help.reasonstudios.com/hc/requests/new">Contact us</a></li>
+                            <li><a href="https://www.reasonstudios.com/blog/tag/video">Videos</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-3 col-lg-2">
+                    <h6 class="footer-toggle collapsed text-uppercase m-0 pt-5 pb-10"
+                        data-toggle="collapse" data-target="#footer-list-shop" aria-expanded="false" aria-controls="footer-list-shop"
+                    >Shop<i class="fa fa-plus"></i>
+                    </h6>
+                    <div id="footer-list-shop" class="collapse" data-parent="#footer">
+                        <ul class="list-unstyled">
+                            <li><a href="https://www.reasonstudios.com/shop/product/reason/">Reason</a></li>
+                            <li><a href="https://www.reasonstudios.com/shop/browse/">Plugins &amp; Sounds</a></li>
+                            <li><a href="https://www.reasonstudios.com/shop/brands/">Brands</a></li>
+                            <li><a href="https://www.reasonstudios.com/shop/deals/">Hot Deals</a></li>
+                            <li><a href="https://www.reasonstudios.com/shop/rewards/">Rewards</a></li>
+                            <li><a href="https://www.reasonstudios.com/rent-to-own">Rent-to-Own</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="w-100 mt-20 d-none d-md-block d-lg-none"></div>
+
+                <div class="col-sm-8 col-lg-4 col-md-12">
+                    <h6 class="text-uppercase m-0 pt-5 pb-10">Become an insider</h6>
+                    <p class="mb-10">Sign up for exclusive offers and updates:</p>
+                    <a href="https://www.reasonstudios.com/account/signup" class="btn btn-sm email-signup-button mb-10 btn-default">Sign up</a>
+                    <ul class="list-inline"><!--
+                        --><li class="list-inline-item"><a href="//www.facebook.com/reasonstudios"><span class="sr-only">Facebook</span><svg class="main-footer__social-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-social-fb"></use></svg></a></li><!--
+                        --><li class="list-inline-item"><a href="//twitter.com/reasonstudios"><span class="sr-only">Twitter</span><svg class="main-footer__social-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-social-tw"></use></svg></a></li><!--
+                        --><li class="list-inline-item"><a href="//www.instagram.com/reasonstudios"><span class="sr-only">Instagram</span><svg class="main-footer__social-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-social-ig"></use></svg></a></li><!--
+                        --><li class="list-inline-item"><a href="//www.youtube.com/reasonstudios"><span class="sr-only">Youtube</span><svg class="main-footer__social-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-social-yt"></use></svg></a></li><!--
+                    --></ul>
+
+                    <div>
+                        <p><span class="h6 text-uppercase mr-10">Blog</span><a href="https://www.reasonstudios.com/blog" class="main-footer__blog-link">Visit the Reason Studios blog</a></p>
+                    </div>
+                </div>
+            </div>
         </div>
-      {{/if}}
-    </div>
-  </div>
-</footer>
+    </footer>
+</div>
+
+<script src="{{asset 'bootstrap-4.3.1.bundle.min.js'}}"></script>

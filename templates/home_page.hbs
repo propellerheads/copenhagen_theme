@@ -1,6 +1,6 @@
 <section class="section hero">
   <div class="hero-inner">
-    {{search submit=false instant=settings.instant_search class='search search-full'}}
+    {{search submit=false instant=true class='search search-full'}}
   </div>
 </section>
 
@@ -18,10 +18,13 @@
             </li>
           {{else}}
             {{#each sections}}
-              <li class="blocks-item">
+              <li class="blocks-item {{#if internal}}blocks-item-internal{{/if}}">
                 <a href='{{url}}' class="blocks-item-link">
                   <h4 class="blocks-item-title">
                     {{name}}
+                    {{#if internal}}
+                      <span class="icon-lock" title="{{t 'internal'}}"></span>
+                    {{/if}}
                   </h4>
                   <p class="blocks-item-description">{{excerpt description}}</p>
                 </a>
@@ -32,6 +35,8 @@
       </ul>
       {{pagination}}
     </section>
+    
+
 
     {{#if promoted_articles}}
       <section class="articles">
@@ -39,13 +44,9 @@
         <ul class="article-list promoted-articles">
           {{#each promoted_articles}}
             <li class="promoted-articles-item">
-                <a href="{{url}}">
-                  {{title}}
-
-                  {{#if internal}}
-                    <span class="icon-lock" title="{{t 'internal'}}"></span>
-                  {{/if}}
-                </a>
+              <a href="{{url}}">
+                {{title}}
+              </a>
             </li>
           {{/each}}
         </ul>
@@ -53,8 +54,14 @@
     {{/if}}
   </section>
 
+    <!-- contact support button. ser ut som yes/no/follow-knappar 
+  <div class="article-more-questions">
+  <a class="article-subscribe" title="Contact Support" rel="nofollow" role="button" aria-selected="false" href="/hc/en-us/requests/new">Contact Support</a>
+  </div>-->
+  
+  <!-- community hidden
   {{#if help_center.community_enabled}}
-    <section class="section home-section community">
+    <section class="section community">
       <h2>{{t 'community'}}</h2>
       {{#link 'community' class='community-link'}}
         {{t 'join_conversation'}}
@@ -63,10 +70,11 @@
       <div class="community-image"></div>
     </section>
   {{/if}}
-
-  <section class="section home-section activity">
-    {{#if settings.show_recent_activity}}
-      {{recent_activity}}
-    {{/if}}
+  -->
+  
+  <!--
+  <section class="section activity">
+    {{recent_activity}}
   </section>
+  -->
 </div>

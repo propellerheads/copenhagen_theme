@@ -4,6 +4,19 @@
     {{breadcrumbs}}
     {{search submit=false}}
   </nav>
+  
+  <!-- Denna "section" visar en knapp som leder till forumet! -->
+  <section id="forum-knapp" class="categories blocks" style="display: none;">
+    <ul class="blocks-list">
+      <li class="blocks-item">
+        <a href='https://help.reasonstudios.com/hc/en-us/community/topics' class="blocks-item-link">
+          <h4 class="blocks-item-title">Mobile Apps Support Forum</h4>
+          <p class="blocks-item-description">Post your questions here!</p>
+        </a>
+      </li>
+    </ul>
+  </section>
+  <!-- slut på forum-knapp -->
 
   <div class="category-container">
     <div class="category-content">
@@ -17,9 +30,12 @@
       <div class="section-tree">
         {{#each sections}}
           <section class="section">
-            <h2 class="section-tree-title">
+            <h3 class="section-tree-title">
               <a href="{{url}}">{{name}}</a>
-            </h2>
+              {{#if internal}}
+                <span class="icon-lock" title="{{t 'internal'}}"></span>
+              {{/if}}
+            </h3>
             {{#if articles}}
               <ul class="article-list">
                 {{#each articles}}
@@ -28,9 +44,6 @@
                       <span data-title="{{t 'promoted'}}" class="icon-star"></span>
                     {{/if}}
                     <a href="{{url}}" class="article-list-link">{{title}}</a>
-                    {{#if internal}}
-                      <span class="icon-lock" title="{{t 'internal'}}"></span>
-                    {{/if}}
                   </li>
                 {{/each}}
               </ul>
@@ -39,6 +52,10 @@
                   {{t 'show_all_articles' count=article_count}}
                 </a>
               {{/if}}
+            {{else}}
+              <i class="section-empty">
+                <a href="{{url}}">{{t 'empty'}}</a>
+              </i>
             {{/if}}
           </section>
         {{else}}

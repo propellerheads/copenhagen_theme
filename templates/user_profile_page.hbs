@@ -5,7 +5,7 @@
         {{#if user.agent}}
           <span class="icon-agent"></span>
         {{/if}}
-        <img class="user-avatar" src="{{user.avatar_url}}" alt=""/>
+        <img class="user-avatar" src="{{user.avatar_url}}" alt="Avatar"/>
       </div>
       <div class="basic-info">
         <h1 class="name">
@@ -80,22 +80,17 @@
 
   {{#if member_since}}
 
-    <div class="profile-nav">
-      <div class="container">
-        <nav class="collapsible-nav">
-          <button type="button" class="collapsible-nav-toggle" aria-label="{{t 'toggle_navigation'}}" aria-expanded="false"></button>
-          <ul class="collapsible-nav-list">
-            {{#each filters}}
-              {{#if selected}}
-                <li class="current"><a href="{{url}}" aria-current="page">{{name}}</a></li>
-              {{else}}
-                <li><a href="{{url}}">{{name}}</a></li>
-              {{/if}}
-            {{/each}}
-          </ul>
-        </nav>
-      </div>
-    </div>
+    <nav class="profile-nav collapsible-nav">
+      <ul class="collapsible-nav-list container">
+        {{#each filters}}
+          {{#if selected}}
+            <li aria-selected=true>{{name}}</li>
+          {{else}}
+            <li><a href="{{url}}">{{name}}</a></li>
+          {{/if}}
+        {{/each}}
+      </ul>
+    </nav>
 
     {{#is filter_by 'activities'}}
       <div class="container">
@@ -113,7 +108,7 @@
 
                 <li class="profile-activity profile-activity-{{type}}">
                   <header class="profile-activity-header">
-                    <img class="user-avatar" src="{{../user.avatar_url}}" alt=""/>
+                    <img class="user-avatar" src="{{../user.avatar_url}}" alt="Avatar"/>
                     <p class="profile-activity-description">{{label}}</p>
                   </header>
 
@@ -196,9 +191,9 @@
               {{#if sorters}}
                 <span class="profile-section-description">{{sorter_description}}</span>
                 <span class="profile-section-sorter dropdown">
-                  <button class="dropdown-toggle" aria-haspopup="true">
+                  <span class="dropdown-toggle">
                     {{current_sorter.label}}
-                  </button>
+                  </span>
                   <span class="dropdown-menu" role="menu">
                     {{#each sorters}}
                       <a href="{{url}}" aria-selected="{{selected}}" role="menuitem">

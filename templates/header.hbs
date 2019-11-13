@@ -1,19 +1,201 @@
-<header class="header">
-  <div class="logo">
-    {{#link 'help_center'}}
-      <img src="{{settings.logo}}" alt="{{t 'home_page' name=help_center.name}}">
-    {{/link}}
-  </div>
-  <div class="nav-wrapper">
-    <button class="menu-button" aria-controls="user-nav" aria-expanded="false" aria-label="{{t 'toggle_navigation'}}">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" class="icon-menu">
-        <path fill="none" stroke="currentColor" stroke-linecap="round" d="M1.5 3.5h13m-13 4h13m-13 4h13"/>
-      </svg>
-    </button>
-    <nav class="user-nav" id="user-nav">
-      {{link 'community'}}
-      {{link 'new_request' class='submit-a-request'}}
-    </nav>
-    {{user_info}}
-  </div>
-</header>
+<svg id="icons" style="display:none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <symbol id="reason-studios-logotype" viewBox="0 0 330 37">
+        <path style="fill-rule:evenodd;clip-rule:evenodd" d="M14.7,17.1c4.3,0,6.5-2.3,6.5-5.7c0-3.5-2.3-5.3-6.5-5.3H6.2v11.1H14.7z M0,0.5h16.2c6.4,0,11.2,4.1,11.2,9.8
+            c0,4.6-2.3,7.7-6,9.1c4,0,5.5,1.7,5.5,5.1v12h-6.2V26c0-2.7-0.8-3.4-3.5-3.4H6.2v13.9H0V0.5z"/>
+        <path style="fill-rule:evenodd;clip-rule:evenodd" d="M48.2,20.6c-0.2-3.7-2.7-5.5-5.5-5.5h-0.4c-2.8,0-5.4,1.7-5.9,5.5H48.2z M30.5,23.6c0-8.2,5.1-13.3,12.1-13.3
+            c7.3,0,11.4,5.2,11.4,12.3c0,0.9-0.1,1.7-0.1,2.6H36.3c0.3,4.5,3.5,7,6.4,7h0.4c2.5,0,4.4-1.4,4.9-3.6h5.9
+            c-1.1,5.1-5.3,8.4-11.2,8.4C36.3,37,30.5,32.3,30.5,23.6L30.5,23.6z"/>
+        <path style="fill-rule:evenodd;clip-rule:evenodd" d="M69.6,32.1c3.4,0,6.4-3,6.4-8.5c0-5.5-3-8.5-6.4-8.5h-0.5c-3.5,0-6.3,3.2-6.3,8.5c0,5.3,2.8,8.6,6.3,8.6H69.6z
+             M56.9,23.6c0-8.8,5.2-13.3,11.2-13.3c4.2,0,6.7,1.9,7.9,4.1v-3.6h5.9v25.7H76v-3.6C74.7,35,72.3,37,68.1,37
+            C62.4,37,56.9,32.4,56.9,23.6L56.9,23.6z"/>
+        <path style="fill-rule:evenodd;clip-rule:evenodd" d="M121.7,32.1c3.9,0,6.5-3.1,6.5-8.5c0-5.4-2.6-8.5-6.5-8.5h-0.4c-3.8,0-6.5,3.1-6.5,8.5c0,5.4,2.7,8.5,6.5,8.5
+            H121.7z M108.9,23.6c0-7.8,5.2-13.3,12.6-13.3c7.4,0,12.7,5.5,12.7,13.3c0,7.8-5.2,13.3-12.7,13.3C114.1,37,108.9,31.4,108.9,23.6
+            L108.9,23.6z"/>
+        <path style="fill-rule:evenodd;clip-rule:evenodd" d="M137.1,10.8h5.9v3.7c1.5-2.5,4.3-4.2,8-4.2c6.1,0,9.1,3.9,9.1,9.4v16.7h-5.9V20.6c0-3.4-1.5-5.5-4.6-5.5h-0.4
+            c-3.3,0-6.2,2.9-6.2,7v14.3h-5.9V10.8z"/>
+        <path style="fill-rule:evenodd;clip-rule:evenodd" d="M201.8,30.2V15.7h-3.1v-4.9h3.1V0.5h5.9v10.3h5.9v4.9h-5.9v13.2c0,2,0.5,2.5,2.5,2.5h4.2v5.1H208
+            C204,36.5,201.8,34.2,201.8,30.2"/>
+        <path style="fill-rule:evenodd;clip-rule:evenodd" d="M216.5,27.4V10.8h5.9v15.8c0,3.7,1.5,5.6,4.4,5.6h0.4c3.1,0,5.8-3,5.8-7.2V10.8h5.9v25.7H233v-4.2
+            c-1.3,2.7-4.1,4.7-7.8,4.7C219.3,37,216.5,33,216.5,27.4"/>
+        <path style="fill-rule:evenodd;clip-rule:evenodd" d="M255.3,32.1c3.3,0,6.4-3.1,6.4-8.5c0-5.4-3.1-8.5-6.4-8.5h-0.4c-3.6,0-6.4,3.1-6.4,8.5c0,5.4,2.8,8.6,6.4,8.6
+            H255.3z M242.5,23.6c0-7.6,4.5-13.3,11.5-13.3c3.6,0,6.5,1.9,7.6,4V0.5h5.9v35.9h-5.9V33c-1.1,2-4.3,4-7.9,4
+            C246.8,37,242.5,31.2,242.5,23.6L242.5,23.6z"/>
+        <polygon style="fill-rule:evenodd;clip-rule:evenodd" points="271.5,36.5 277.5,36.5 277.5,10.8 271.5,10.8 "/>
+        <path style="fill-rule:evenodd;clip-rule:evenodd" d="M293.7,32.1c3.9,0,6.5-3.1,6.5-8.5c0-5.4-2.6-8.5-6.5-8.5h-0.4c-3.8,0-6.5,3.1-6.5,8.5c0,5.4,2.7,8.5,6.5,8.5
+            H293.7z M280.9,23.6c0-7.8,5.2-13.3,12.6-13.3c7.4,0,12.7,5.5,12.7,13.3c0,7.8-5.2,13.3-12.7,13.3C286.1,37,280.9,31.4,280.9,23.6
+            L280.9,23.6z"/>
+        <path style="fill-rule:evenodd;clip-rule:evenodd" d="M274.6,0.5c-2,0-3.6,1.6-3.6,3.6c0,2,1.6,3.6,3.6,3.6s3.6-1.6,3.6-3.6C278.2,2.1,276.6,0.5,274.6,0.5"/>
+        <path style="fill-rule:evenodd;clip-rule:evenodd" d="M168,24.6h6.2c0.2,4.2,4,7.2,9.4,6.9l0.5,0c4.3-0.2,6.4-2.6,6.3-5.2c-0.1-2.4-1.5-3.8-5-4.3l-6.2-0.9
+            c-6.2-0.9-9.5-4.2-9.8-9.7S173.7,0.5,182.1,0c8.4-0.5,14.4,4.7,14.5,11.6h-6.2c-0.3-3.9-4-6.3-7.9-6.1l-0.5,0
+            c-4.1,0.2-6.6,2.6-6.5,5.2c0.1,2.6,1.8,3.8,4.9,4.3l5.6,0.8c6.2,0.9,10.1,3.9,10.4,9.7c0.3,6.2-4.5,10.9-13,11.4
+            C174.2,37.5,168.2,32.3,168,24.6"/>
+        <path style="fill-rule:evenodd;clip-rule:evenodd" d="M84.6,28.2h6c0.1,2.7,2.6,4.2,5.3,4.1l0.4,0c2.4-0.1,4-1.3,3.9-3.1c-0.1-1.5-1-2.4-3.2-2.7l-3.6-0.6
+            c-4.9-0.9-7.9-3-8.1-7.2c-0.2-4.8,3.8-8.1,9.7-8.4c6.7-0.3,11,3.4,11,8.6h-5.9c-0.3-2.3-2-4.1-4.8-3.9L95,15
+            c-2.3,0.1-3.9,1.3-3.8,3.1c0.1,1.5,1.3,2.3,3.6,2.7l3.7,0.7c4.5,0.8,7.3,2.9,7.5,7.3c0.2,4.5-3.4,8-10,8.3
+            C89.3,37.3,84.6,33.5,84.6,28.2"/>
+        <path style="fill-rule:evenodd;clip-rule:evenodd" d="M308.5,28.2h6c0.1,2.7,2.6,4.2,5.3,4.1l0.4,0c2.4-0.1,4-1.3,3.9-3.1c-0.1-1.5-1-2.4-3.2-2.7l-3.6-0.6
+            c-4.9-0.9-7.9-3-8.1-7.2c-0.2-4.8,3.8-8.1,9.7-8.4c6.7-0.3,11,3.4,11,8.6h-5.9c-0.3-2.3-2-4.1-4.8-3.9l-0.4,0
+            c-2.3,0.1-3.9,1.3-3.8,3.1c0.1,1.5,1.3,2.3,3.6,2.7l3.7,0.7c4.5,0.8,7.3,2.9,7.5,7.3c0.2,4.5-3.4,8-10,8.3
+            C313.1,37.3,308.5,33.5,308.5,28.2"/>
+    </symbol>
+    <symbol id="icon-reason-studios" viewBox="0 0 24 24">
+        <path d="M10.89,1.3L3.26,5.69c-0.69,0.4-1.11,1.13-1.11,1.92v8.78c0,0.79,0.42,1.52,1.11,1.92l7.62,4.39c0.69,0.4,1.54,0.4,2.22,0
+            l7.62-4.39c0.69-0.4,1.11-1.13,1.11-1.92V7.61c0-0.79-0.42-1.52-1.11-1.92L13.11,1.3C12.42,0.9,11.58,0.9,10.89,1.3"/>
+        <polygon fill="#FFFFFF" points="12,4.69 5.65,8.34 5.65,15.66 12,19.31 12,12 18.35,8.34 "/>
+    </symbol>
+    <symbol id="icon-reason" viewBox="0 0 24 24">
+        <path d="M10.89,1.3L3.26,5.69c-0.69,0.4-1.11,1.13-1.11,1.92v8.78c0,0.79,0.42,1.52,1.11,1.92l7.62,4.39c0.69,0.4,1.54,0.4,2.22,0
+            l7.62-4.39c0.69-0.4,1.11-1.13,1.11-1.92V7.61c0-0.79-0.42-1.52-1.11-1.92L13.11,1.3C12.42,0.9,11.58,0.9,10.89,1.3"/>
+        <polygon fill="#F05023" points="12,4.69 5.65,8.34 5.65,15.66 12,19.31 12,12 18.35,8.34 "/>
+    </symbol>
+    <symbol id="icon-reason-studios-transparent" viewBox="0 0 24 24">
+        <path d="M20.7,5.7l-7.6-4.4c-0.7-0.4-1.5-0.4-2.2,0L3.3,5.7C2.6,6.1,2.2,6.8,2.2,7.6v8.8c0,0.8,0.4,1.5,1.1,1.9l7.6,4.4
+            c0.7,0.4,1.5,0.4,2.2,0l7.6-4.4c0.7-0.4,1.1-1.1,1.1-1.9V7.6C21.8,6.8,21.4,6.1,20.7,5.7z M12,12v7.3l-6.3-3.7V8.3L12,4.7l6.3,3.6
+            L12,12z"/>
+    </symbol>
+    <symbol id="icon-user" viewBox="0 0 24 24">
+        <path d="M12,19.2c-2.5,0-4.71-1.28-6-3.2c0.03-2,4-3.1,6-3.1s5.97,1.1,6,3.1C16.71,17.92,14.5,19.2,12,19.2L12,19.2z
+             M12,5c1.66,0,3,1.34,3,3s-1.34,3-3,3S9,9.66,9,8S10.34,5,12,5L12,5z M12,2C6.48,2,2,6.48,2,12c0,2.65,1.05,5.2,2.93,7.07
+            C6.8,20.95,9.35,22,12,22s5.2-1.05,7.07-2.93C20.95,17.2,22,14.65,22,12C22,6.47,17.5,2,12,2z"/>
+    </symbol>
+    <symbol id="icon-cart-bag" viewBox="0 0 24 24">
+        <path d="M12,1c2.6,0,4.8,2.1,5,4.7l4,0V22H3V5.7l4,0l0,0C7.2,3.1,9.4,1,12,1z M18.6,8.2H5.4v11.4
+            h13.2V8.2z M12,3.4c-1.4,0-2.5,1-2.7,2.3l5.3,0c-0.2-1.3-1.2-2.2-2.5-2.3L12,3.4z"/>
+    </symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24">
+        <path d="M16.3,14.2h-0.9L15,13.9c1.2-1.4,1.9-3.1,1.9-5.1C16.9,4.5,13.4,1,9,1S1.2,4.5,1.2,8.8s3.5,7.8,7.8,7.8
+            c1.9,0,3.7-0.7,5.1-1.9l0.3,0.3V16l6,6l1.8-1.8L16.3,14.2z M9,14.2c-3,0-5.4-2.4-5.4-5.4S6.1,3.4,9,3.4s5.4,2.4,5.4,5.4
+            S12,14.2,9,14.2z"/>
+    </symbol>
+    <symbol id="icon-clear" viewBox="0 0 24 24">
+        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+    </symbol>
+    <symbol id="icon-arrow-back" viewBox="0 0 24 24">
+        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+    </symbol>
+    <symbol id="icon-arrow-forward" viewBox="0 0 24 24">
+        <path d="M0 0h24v24H0z" fill="none"/>
+        <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+    </symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24">
+        <polygon points="23,5.8 7.9,21 1,14 2.8,12.2 7.9,17.4 21.2,4"/>
+    </symbol>
+    <symbol id="icon-social-ig" viewBox="0 0 24 24">
+        <path d="M0,0v24h24V0H0z M20,2.7c0.7,0,1.3,0.6,1.3,1.3S20.7,5.3,20,5.3S18.7,4.7,18.7,4
+            S19.3,2.7,20,2.7z M12,5.3c3.7,0,6.7,3,6.7,6.7s-3,6.7-6.7,6.7s-6.7-3-6.7-6.7S8.3,5.3,12,5.3z M12,8c-2.2,0-4,1.8-4,4s1.8,4,4,4
+            s4-1.8,4-4S14.2,8,12,8z"/>
+    </symbol>
+    <symbol id="icon-social-tw" viewBox="0 0 24 24">
+        <path d="M0,0v24h24V0H0z M18.7,8.7c0,0.1,0,0.2,0,0.5c0,4.3-3.3,9.4-9.4,9.4c-1.8,0-3.5-0.6-5-1.5
+            c0.2,0,0.6,0,0.8,0c1.5,0,3-0.6,4.1-1.4c-1.5,0-2.6-1-3.1-2.3c0.2,0,0.5,0.1,0.6,0.1c0.3,0,0.6,0,0.9-0.1C6.2,13,5,11.8,5,10.2
+            c0.5,0.2,0.9,0.3,1.5,0.5C5.6,9.8,5,8.9,5,7.8c0-0.6,0.1-1.1,0.5-1.6c1.6,1.9,4,3.3,6.7,3.4c0-0.2-0.1-0.5-0.1-0.8
+            c0-1.8,1.5-3.3,3.3-3.3c0.9,0,1.8,0.3,2.4,1c0.8-0.1,1.5-0.5,2.1-0.8c-0.2,0.8-0.8,1.4-1.5,1.8c0.7-0.1,1.3-0.2,1.9-0.6
+            C19.9,7.7,19.3,8.2,18.7,8.7z"/>
+    </symbol>
+    <symbol id="icon-social-yt" viewBox="0 0 24 24">
+        <path d="M24,0v24H0V0H24z M8.4,6v12l9.6-6L8.4,6z"/>
+    </symbol>
+    <symbol id="icon-social-fb" viewBox="0 0 24 24">
+        <path d="M0,0v24h12.8v-9.3H9.7v-3.6h3.1V8.4c0-3.1,1.9-4.8,4.7-4.8c0.9,0,1.9,0,2.8,0.1V7h-1.9
+            c-1.5,0-1.8,0.7-1.8,1.8v2.3h3.6l-0.5,3.6h-3.2V24H24V0H0z"/>
+    </symbol>
+</svg>
+
+{{!-- Important: header must be wrapped for search collapse to work --}}
+<div>
+  <header class="ph-header" data-metrics-context="header">
+      <div class="container">
+          <nav class="navbar">
+              <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#headerNavbar" aria-controls="headerNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <a href="https://www.reasonstudios.com/" class="navbar-brand" title="Reason Studios">
+                  <svg class="navbar-brand__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-reason-studios-transparent"></use></svg>
+                  <svg class="navbar-brand__logotype"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reason-studios-logotype"></use></svg>
+              </a>
+
+              {{!-- Cart counter added in React - hidden for now in Zendesk --}}
+              <a href="https://www.reasonstudios.com/shop/checkout/cart/"
+                 id="cart-button-sm"
+                 class="d-none text-decoration-none"></a>
+ 
+              {{!-- Add empty element to balance flex layout --}}
+              <div><!-- empty --></div>
+
+              <div class="collapse navbar-collapse" id="headerNavbar">
+                  {{!-- Mobile only search form removed for now in Zendesk --}}
+                  <ul class="navbar-nav mr-auto"><!--
+                      --><li class="nav-item">
+                          <a href="https://www.reasonstudios.com/reason" class="nav-link">
+                              Reason
+                          </a>
+                      </li><!--
+                      --><li class="nav-item">
+                          <a href="https://www.reasonstudios.com/mobile-apps" class="nav-link">
+                              Mobile Apps
+                          </a>
+                      </li><!--
+                      --><li class="nav-item">
+                          <a href="https://www.reasonstudios.com/shop" class="nav-link nav-link__shop-link">
+                              Shop
+                          </a>
+                      </li><!--
+                      --><li class="nav-item">
+                          <a href="https://www.reasonstudios.com/blog" class="nav-link">
+                              Blog
+                          </a>
+                      </li><!--
+                      --><li class="nav-item">
+                          <a href="https:////help.reasonstudios.com/" class="nav-link active">
+                              Support <span class="sr-only">(current)</span>
+                          </a>
+                      </li><!--
+                  --></ul>
+
+                  <aside class="navbar-nav navbar-aside">
+                      <span class="nav-link d-none d-lg-block">
+                          <a href="{% url 'reason:try_reason' %}" class="btn btn-xs btn-trial">
+                              Try Reason free
+                          </a>
+                      </span>
+
+                      {{!-- Cart. Toggles '.has-items' --}}
+                      {{!-- (Removed) --}}
+
+                      {{!-- Search button: href is disabled with js --}}
+                      {{!-- (Removed) --}}
+
+                      {{!-- User account --}}
+                      <div class="dropdown">
+                          <a href="#"
+                             class="nav-link dropdown-toggle"
+                             role="button" id="navDropdownAccount" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: none;"
+                          >My Account</a>
+
+                          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navDropdownAccount">
+                              <a class="dropdown-item" href="https://www.reasonstudios.com/user/edit">Settings</a>
+                              <a class="dropdown-item" href="https://www.reasonstudios.com/user/products/" data-pjax="disable">My products</a>
+                              <a class="dropdown-item" href="https://www.reasonstudios.com/user/orders/" data-pjax="disable">Orders</a>
+                              <a class="dropdown-item" href="https://www.reasonstudios.com/user/subscription/" data-pjax="disable">Subscription</a>
+                              <a class="dropdown-item" href="https://www.reasonstudios.com/user/products/rent-to-own" data-pjax="disable">Rent-to-Own</a>
+                              <a class="dropdown-item" href="https://www.reasonstudios.com/rewards" data-pjax="disable">Rewards</a>
+                              <a class="dropdown-item" href="https://help.reasonstudios.com/hc/en-us/requests" data-pjax="disable">My tickets</a>
+                              <div id="open-tickets"></div>
+                              <a class="dropdown-item" href="https://help.reasonstudios.com/access/logout">Log out</a>
+                          </div>
+                      </div>
+                      <!-- Login / Signup -->
+                      <a href="https://www.reasonstudios.com/account/signup" id="signupButton" class="nav-link auth-button auth-button-sign-up" rel="nofollow" style="display: none;">Sign up</a>
+                      <a href="https://www.reasonstudios.com/account/login?next=/support/" id="loginButton" class="nav-link auth-button auth-button-log-in" rel="nofollow" style="display: none;">Log in</a>
+                  </aside>
+              </div>
+          </nav>
+      </div>
+  </header>
+
+  {{!-- Dropdown search form removed for now in Zendesk --}}
+
+</div>
+
+<main role="main" id="content" class="flex-shrink-0">
