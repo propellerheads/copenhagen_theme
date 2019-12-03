@@ -229,10 +229,10 @@
   "url": "{{article.url}}",
   "mainEntity": {
     "@type": "Question",
-    "name": "{{json_stringify article.title}}",
+    "name": {{json_stringify article.title}},
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "{{json_stringify article.body}}"
+      "text": {{json_stringify article.body}}
     }
   }
 }
@@ -244,11 +244,11 @@
   "@context": "http://schema.org",
   "@type": "NewsArticle",
   "url": "{{article.url}}",
-  "headline": "{{json_stringify article.title}}",
+  "headline": {{json_stringify article.title}},
   "mainEntityOfPage": "{{article.url}}",
-  "articleBody": "{{json_stringify article.body}}",
+  "articleBody": {{json_stringify article.body}},
   "datePublished": "{{article.created_at}}",
-  "author": "{{json_stringify article.author.name}}",
+  "author": {{json_stringify article.author.name}},
   "publisher": {
     "@type": "Organization",
     "name": "Reason Studios",
