@@ -1,6 +1,27 @@
 @import url($assets-core-zd-4-min-css);
 
 @charset "UTF-8";
+
+/***** PH-Bootstrap Sass overrides *****/
+
+/* Zendesk adds a '.subnav' class of its own to the search & breadcrumbs wrapper. 
+ * This removes the subnav linear gradient.
+ */
+.sub-nav::after, .sub-nav::before {
+  display: none !important;
+}
+
+/* The font sizes of any h1 to h3 tags in our articles text content should be decreased for legibility. */
+.article-body .h1, .article-body h1,
+.article-body .h2, .article-body h2 {
+  font-size: 1.7rem;  /* h4 size */
+}
+
+.article-body .h3, .article-body h3, 
+.article-body .h4, .article-body h4 {
+  font-size: 1.3rem;  /* h5 size */
+}
+
 /***** Base *****/
 * {
   box-sizing: border-box;

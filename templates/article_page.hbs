@@ -216,8 +216,51 @@
     </article>
   </div>
 </div>
+
+{{!-- SEO : Structured Data --}}
+{{!-- TODO: breadcrumbs ? updated_at / created_at ? --}}
+
 {{#isnt section.name "News" }}
-<!-- ++ section is not News ++ -->
+<!-- section is not News -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "url": "{{article.url}}",
+  "mainEntity": {
+    "@type": "Question",
+    "name": "{{article.title}}",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "{{article.body}}"
+    }
+  }
+}
+</script>
 {{else}}
-<!-- ++ section is News ++ -->
+<!-- section is News -->
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "url": "{{article.url}}",
+  "headline": "{{article.title}}",
+  "mainEntityOfPage": "{{article.url}}",
+  "articleBody": "{{article.body}}",
+  "datePublished": "{{article.created_at}}",
+  "author": "{{author.name}}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Reason Studios",
+    "url": "https://www.reasonstudios.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{settings.logo}}",
+      "width": "1753",
+      "height": "1240",
+      "name": "Reason Studios Logo"
+    }
+  }
+}
+</script>
 {{/isnt}}
