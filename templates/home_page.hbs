@@ -54,10 +54,22 @@
     {{/if}}
   </section>
 
-    <!-- contact support button. ser ut som yes/no/follow-knappar 
+  <!-- contact support button. ser ut som yes/no/follow-knappar -->
   <div class="article-more-questions">
-  <a class="article-subscribe" title="Contact Support" rel="nofollow" role="button" aria-selected="false" href="/hc/en-us/requests/new">Contact Support</a>
-  </div>-->
+    <a class="article-subscribe" title="Report Bug Ticket" rel="nofollow" role="button" aria-selected="false" href="/hc/en-us/requests/new?ticket_form_id=360000198814">Report Bug Ticket</a>
+    <a class="article-subscribe" title="My Beta Profile" rel="nofollow" role="button" aria-selected="false" href="/hc/en-us/profile">My Beta Profile</a>
+  </div>
+
+  {{#if help_center.community_enabled}}
+    <section class="section community">
+
+      <h2>Forum - {{t 'community'}}</h2>
+      {{#link 'community' class='community-link'}}
+        <div class="community-image">{{t 'join_conversation'}}</div>
+      {{/link}}
+    </section>
+  {{/if}}
+  </div>
   
   <!-- community hidden
   {{#if help_center.community_enabled}}

@@ -237,25 +237,7 @@ $(document).ready(function() {
   	showMenu();
   } else {
     showLoginButtons();
-  }
-
-  function hideContactSupportButtononReasonCompact() {
-    if ($("li[title='Reason Compact']")[0]) {
-      $("a[title='Contact Support']").hide();
-      $('#article-comments').show();
-    }
-  }
-  
-  function maybeShowForumButton() {
-    console.log('determining if forum should be shown');
-    if ($('h1')[0] && $('h1')[0].innerHTML === 'Mobile Apps') {
-      $('#forum-knapp').show()
-    }
-  }
-  
-	maybeShowForumButton();
-  hideContactSupportButtononReasonCompact();
-  
+  }  
 });
 
 $(document).ready(function() {
